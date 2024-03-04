@@ -4,7 +4,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Dadtar pembeli</title>
+    <title>Daftar Pembeli</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1>Daftar Pembeli</h1>
+  
+  <table class="table" id="daftar-pembeli">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nama Pembeli</th>
+        <th scope="col">Harga</th>
+        <th scope="col">Stok</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  
+  <script type="module">
+    import { ambilDaftarPembeli } from './main.js';
+    
+    $(document).ready(async function() {
+      let elemenDaftar = $("#daftar-pembeli > tbody");
+      let daftarPembeli = await ambilDaftarPembeli();
+      
+      daftarPembeli.forEach((data) => {
+        elemenDaftar.append(
+          '<tr>' +
+          '<th>' + '</th>' +
+          '<td>' + data.nama + '</td>' +
+          '<td>' + data.harga + '</td>' +
+          '<td>' + data.stok + '</td>' +
+          '</tr>'
+        );
+      });
+    });
+  </script>
+</body>
+
+</html
 </head>
 
 <body>
