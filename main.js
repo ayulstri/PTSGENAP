@@ -42,3 +42,20 @@ export async function ambilDaftarPembeli() {
   
   return hasil;
 }
+export function formatAngka(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+export async function tambahpembeli(nama, alamat,  notlpn) {
+  try {
+   const dokRef = await addDoc(collection(db, 'pembeli'), {
+     nama: nama,
+     harga:alamat,
+     stok: notlpn,
+   });
+   console.log('behasil menambah pembeli' + dokRef.id);
+  } catch (e) {
+    console.log('gagal menambah pembeli ' + e);
+  }
+  
+}
