@@ -12,38 +12,38 @@
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-<body class="mb-3">
-  <h1>from data pembeli</h1>
-  
-  <form>
-   <div class="mb-3">
-          <label class="from-label"> nama pembeli </label>
-          <input type="text" class="form-control" id="input-nama">
-        </div>
- <div class="mb-3">
-           <label class="from-label"> alamat </label>
-           <input type="text" class="form-control" id="input-harga">
-         </div>
- <div class="mb-3">
-            <label class="from-label">no.telepon </label>
-            <input type="text" class="form-control" id="input-stok">
-          </div>
-  <button type="submit" class="btn btn-primary"  id="tombol-tambah">simpan</button>
+<body class="m-3">
+  <h1></h1>
+  <form class="mb-3">
+    <div class="mb-3">
+      <label class="form-label">Nama pembeli</label>
+      <input type="text" class="form-control" id="input-nama">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">alamat</label>
+      <input type="text" class="form-control" id="input-harga">
+    </div>
+     <div class="mb-3">
+      <label class="form-label">telpon</label>
+      <input type="text" class="form-control" id="input-stok">
+    </div>
+    <button type="submit" class="btn btn-primary" id="tombol-tambah">Simpan</button>
   </form>
   
-  <a href="index.html">daftar pembeli</a>
+  
+  <a href="index.html">lihat daftar barang</a>
   
   <script type="module">
     import { tambahProduk } from './main.js';
     
-    let tomboltambah = document.getElementById('tombol-tambah');
-    let elemenNamapembeli = document.getElementById('input-nama');
-    let elemenalamat = document.getElementById('input-harga');
-    let elemennotlnp = document.getElementById('input-stok');
+    let tombolTambah = document.getElementById('tombol-tambah');
+    let elemenNamaProduk = document.getElementById('input-nama');
+    let elemenHarga = document.getElementById('input-harga');
+    let elemenstok = document.getElementById('input-stok');
     
-    tomboltambah.addEventListener('click', async function (e) {
+    tombolTambah.addEventListener('click', async function (e) {
       e.preventDefault();
-      await tambahpembeli(elemenNamaProduk.value, elemenHarga.value, elemenStok.value);
+      await tambahProduk(elemenNamaProduk.value, elemenHarga.value, elemenstok.value);
       window.location.href = 'index.html';
     });
   </script>

@@ -35,8 +35,8 @@ export async function ambilDaftarPembeli() {
     hasil.push({
       id: dok.id,
       nama: dok.data().nama,
-      harga: dok.data().harga,
-      stok: dok.data().stok,
+      alamat: dok.data().harga,
+      notlpn: dok.data().stok,
     });
   });
   
