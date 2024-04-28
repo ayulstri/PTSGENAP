@@ -35,13 +35,14 @@ export async function ambilDaftarPembeli() {
     hasil.push({
       id: dok.id,
       nama: dok.data().nama,
-      alamat: dok.data().harga,
-      notlpn: dok.data().stok,
+      alamat: dok.data().alamat,
+      notlpn: dok.data().notlpn,
     });
   });
   
   return hasil;
 }
+
 export function formatAngka(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -53,9 +54,12 @@ export async function tambahpembeli(nama, alamat,  notlpn) {
      harga:alamat,
      stok: notlpn,
    });
-   console.log('behasil menambah pembeli' + dokRef.id);
+   console.log('Berhasil menambah produk' + dokRef.id);
   } catch (e) {
-    console.log('gagal menambah pembeli ' + e);
+    console.log('Gagal menambah produk ' + e);
   }
-  
+}
+
+  export async function hapusPembeli(docId) {
+await deleteDoc(doc(db, "pemebeli", docId));
 }
