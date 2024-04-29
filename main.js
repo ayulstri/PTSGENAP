@@ -52,7 +52,7 @@ export async function tambahPembeli(nama, alamat,  notlpon) {
    const dokRef = await addDoc(collection(db, 'pembeli'), {
      nama: nama,
      alamat:alamat,
-     notlpon: notlpn,
+     notlpon: notlpon,
    });
    console.log('Berhasil menambah produk' + dokRef.id);
   } catch (e) {
