@@ -36,7 +36,7 @@
     
     $(document).ready(async function() {
       let elemenDaftar = $("#daftar-pembeli > tbody");
-      let daftarPembeli = await ambilDaftarProduk();
+      let daftarPembeli = await ambilDaftarPembeli();
       let nomor = 1;
       
       daftarPembeli.forEach((data) => {
