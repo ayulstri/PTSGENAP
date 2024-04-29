@@ -14,7 +14,7 @@
 <body>
   <h1>Daftar pembeli</h1>
   
-  <table class="table" id="daftar-produk">
+  <table class="table" id="daftar-pembeli">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -27,31 +27,41 @@
     </tbody>
   </table>
   
-  <img src="loader.gif" style="width: 1.8em; display: block" id="loader .gif">
+  <img src="loader.gif" style="width: 15em; display: block" id="loader">
 
-<a href="form-peroduk.html">Tambah data pembeli</a>
+<a href="form data siswa.html">Tambah data pembeli</a>
   
   <script type="module">
-    import { ambilDaftarProduk, formatAngka } from './main.js';
+    import { ambilDaftarPembeli, formatAngka } from './main.js';
     
     $(document).ready(async function() {
-      let elemenDaftar = $("#daftar-produk > tbody");
-      let daftarProduk = await ambilDaftarProduk();
+      let elemenDaftar = $("#daftar-pembeli > tbody");
+      let daftarPembeli = await ambilDaftarProduk();
       let nomor = 1;
       
-      daftarProduk.forEach((data) => {
+      daftarPembeli.forEach((data) => {
         elemenDaftar.append(
           '<tr>' +
           '<th>' + nomor + '</th>' +
           '<td>' + data.nama + '</td>' +
-          '<td>' + data.harga + '</td>' +
+          '<td>' + formatAngka(data.harga) + '</td>' +
           '<td>' + data.stok + '</td>' +
+          '<td>' + '<button class=btn btn-danger tombol-hapus" data="' + data.id + '" >Hapus</button>'+
+          '<img src=loader.gif" style="width: lem; display: none" id="' + data.id + '"> +
+          '</td>' +
           '</tr>'
         );
         nomor = nomor + 1;
+        
       });
-      
       $('#loader .gif').hide();
+      
+      $('.tombol-hapus').click(async function() {
+        $(this).attr('disabled','disable');
+        $('# + $(this).attr('data')).show();
+        await hapusProduk($(this).attr('data'));
+        location.reload();
+      });
       
     });
   </script>
