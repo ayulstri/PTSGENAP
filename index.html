@@ -44,15 +44,15 @@
           '<tr>' +
           '<th>' + nomor + '</th>' +
           '<td>' + data.nama + '</td>' +
-          '<td>' + formatAngka(data.harga) + '</td>' +
-          '<td>' + data.stok + '</td>' +
+          '<td>' + data.alamat + '</td>' +
+          '<td>' + data.telpon + '</td>' +
           '<td>' + '<button class=btn btn-danger tombol-hapus" data="' + data.id + '" >Hapus</button>'+
           '<img src=loader.gif" style="width: lem; display: none" id="' + data.id + '"> +
           '</td>' +
           '</tr>'
         );
-        nomor = nomor + 1;
         
+        nomor = nomor + 1;
       });
       $('#loader .gif').hide();
       
@@ -61,7 +61,10 @@
         $('# + $(this).attr('data')).show();
         await hapusProduk($(this).attr('data'));
         location.reload();
-      });
+      })
+      $('link-ubah').click(async function() {
+        window.location.replace('ubah-produk.html?docId=' + $(this).attr('data'));
+      }}
       
     });
   </script>
