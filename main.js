@@ -51,9 +51,9 @@ export function formatAngka(x) {
 export async function tambahPembeli(nama, alamat,  notlpon) {
   try {
    const dokRef = await addDoc(collection(db, 'pembeli'), {
-     nama: nama,
+     nama:nama,
      alamat:alamat,
-     notlpon: notlpon,
+     notlpon:notlpon,
    });
    console.log('Berhasil menambah produk' + dokRef.id);
   } catch (e) {
@@ -63,8 +63,8 @@ export async function tambahPembeli(nama, alamat,  notlpon) {
    
    export async function ubahpembeli(docId, nama, alamat, notlpon) {
      await updateDoc(doc(db, "pembeli", docId), {
-       nama: nama,
-       alamat: alamat,
+       nama:nama,
+       alamat:alamat,
        notlpon:notlpon
      });
    }
