@@ -19,7 +19,7 @@ const firebaseConfig = {
   penyimpananBucket : "insan-cemerlang-dc590.appspot.com" , 
   pesanSenderId : "1002966213043" , 
   appId : "1:1002966213043:web:4c787b7684f9eafa35ebc6",
-};
+<!DOCTYPE html>
 
 
 
